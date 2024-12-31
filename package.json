@@ -1,0 +1,34 @@
+{
+  "name": "semver-deprecate",
+  "version": "0.0.0",
+  "description": "Semver aware deprecate function",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint .",
+    "prepublishOnly": "tsc"
+  },
+  "exports": {
+    ".": "./index.js"
+  },
+  "keywords": [],
+  "author": "Chris Manson <chris@manson.ie>",
+  "contributors": [
+    "Mehul Kiran Chaudhari <55375534+MehulKChaudhari@users.noreply.github.com>",
+    "Katie Gengler <katie@kmg.io>",
+    "Bert De Block <bert.deblock@bagaar.be>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "fixturify-project": "^7.1.3",
+    "globals": "^15.14.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "semver": "^7.6.3"
+  }
+}
