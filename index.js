@@ -4,11 +4,11 @@ import assert from './assert.js';
 
 /**
  * Create a new deprecate function for your library.
- * 
+ *
  * ```js
  * import { makeDeprecate } from 'semver-deprecate';
  * import pkg from "./package.json" with { type: "json" };
- * 
+ *
  * const deprecate = makeDeprecate(pkg.name, pkg.version);
  * ```
  *
