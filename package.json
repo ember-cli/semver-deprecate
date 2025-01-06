@@ -18,6 +18,11 @@
     "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" --prefixColors auto && pnpm format",
     "lint:format": "prettier . --cache --check"
   },
+  "files": [
+    "dist",
+    "index.js",
+    "assert.js"
+  ],
   "exports": {
     ".": {
       "import": "./index.js",
