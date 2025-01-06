@@ -7,7 +7,7 @@ This is a tiny micro-library that extracts the "Ember way" of doing deprecations
 ```js
 import { makeDeprecate } from 'semver-deprecate';
 
-import pkg from "./package.json" with { type: "json" };
+import pkg from './package.json' with { type: 'json' };
 
 const deprecate = makeDeprecate(pkg.name, pkg.version);
 
