@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "pretest": "pnpm build",
     "test": "vitest",
     "prepublishOnly": "pnpm build",
     "build": "concurrently \"pnpm:build:*\" --names \"build:\" --prefixColors auto",
