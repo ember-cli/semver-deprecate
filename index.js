@@ -12,8 +12,9 @@ import assert from './assert.js';
  * const deprecate = makeDeprecate(pkg.name, pkg.version);
  * ```
  *
- * @param {string} deprecateLib the library that you are creating a deprecate function for (usually name in package.json)
- * @param {*} currentVersion the current version of the library you are creating a deprecate function for (usually read from package.json)
+ * @param {string} deprecateLib the library that you are creating a deprecate function for (usually "name" in package.json)
+ * @param {string} currentVersion the current version of the library you are creating a deprecate function for (usually "version" from package.json)
+ * @returns { (description: string, condition: boolean, options: { for: string, id: string, since: {available: string, enabled: string}, until: string } => void }
  */
 export function makeDeprecate(deprecateLib, currentVersion) {
   /**
