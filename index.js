@@ -107,13 +107,7 @@ export function makeDeprecate(deprecateLib, currentVersion) {
 
     let message = formatMessage(description, options);
 
-    warn(message);
-    warn('');
-    warn(getStackTrace());
-
-    // Return the message for testing purposes.
-    // This can be removed once we can register deprecation handlers.
-    return message;
+    warn(`${message}\n\n${getStackTrace()}`);
   };
 }
 

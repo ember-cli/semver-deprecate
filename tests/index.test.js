@@ -1,14 +1,23 @@
 import stripAnsi from 'strip-ansi';
 import { makeDeprecate } from 'semver-deprecate';
 
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { afterEach } from 'vitest';
 
 let deprecate;
+let deprecations = [];
 
 describe('deprecate', function () {
   beforeEach(async () => {
     deprecate = makeDeprecate('ember-cli', '3.0.0');
+    vi.spyOn(console, 'warn').mockImplementation((deprecation) => {
+      deprecations.push(stripAnsi(deprecation).split('at getStackTrace')[0].trimEnd());
+    })
   });
+
+  afterEach(() => {
+    deprecations = [];
+  })
 
   it('it throws when the description argument is missing', function () {
     expect(() => {
@@ -137,7 +146,7 @@ describe('deprecate', function () {
   });
 
   it('it does nothing when the condition argument is truthy', function () {
-    let message = deprecate('description', true, {
+    deprecate('description', true, {
       for: 'foo',
       id: 'foo',
       since: {
@@ -147,11 +156,11 @@ describe('deprecate', function () {
       until: '5.0.0',
     });
 
-    expect(message).to.be.undefined;
+    expect(deprecations).to.be.empty;
   });
 
   it('it displays a deprecation message when the condition argument is falsy', function () {
-    let message = deprecate('description', false, {
+    deprecate('description', false, {
       for: 'foo',
       id: 'foo',
       since: {
@@ -161,7 +170,7 @@ describe('deprecate', function () {
       until: '5.0.0',
     });
 
-    expect(stripAnsi(message)).to.be.equal(` DEPRECATION \n
+    expect(deprecations[0]).to.be.equal(` DEPRECATION \n
 description
 
 ID     foo
@@ -169,7 +178,7 @@ UNTIL  5.0.0`);
   });
 
   it('it includes the `url` option in the deprecation message when provided', function () {
-    let message = deprecate('description', false, {
+    deprecate('description', false, {
       for: 'foo',
       id: 'foo',
       since: {
@@ -180,7 +189,7 @@ UNTIL  5.0.0`);
       url: 'https://example.com',
     });
 
-    expect(stripAnsi(message)).to.equal(` DEPRECATION \n
+    expect(deprecations[0]).to.equal(` DEPRECATION \n
 description
 
 ID     foo
