@@ -14,13 +14,11 @@ describe('Types', function () {
     expectTypeOf(deprecateFunction).toBeFunction();
     expectTypeOf(deprecateFunction).parameter(0).toBeString();
     expectTypeOf(deprecateFunction).parameter(1).toBeBoolean();
-    expectTypeOf(deprecateFunction)
-      .parameter(2)
-      .toEqualTypeOf<{
-        for: string;
-        id: string;
-        since: { available: string; enabled: string };
-        until: string;
-      }>();
+    expectTypeOf(deprecateFunction).parameter(2).toEqualTypeOf<{
+      for: string;
+      id: string;
+      since: { available: string; enabled: string };
+      until: string;
+    }>();
   });
 });

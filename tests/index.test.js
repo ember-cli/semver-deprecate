@@ -11,13 +11,15 @@ describe('deprecate', function () {
   beforeEach(async () => {
     deprecate = makeDeprecate('ember-cli', '3.0.0');
     vi.spyOn(console, 'warn').mockImplementation((deprecation) => {
-      deprecations.push(stripAnsi(deprecation).split('at getStackTrace')[0].trimEnd());
-    })
+      deprecations.push(
+        stripAnsi(deprecation).split('at getStackTrace')[0].trimEnd(),
+      );
+    });
   });
 
   afterEach(() => {
     deprecations = [];
-  })
+  });
 
   it('it throws when the description argument is missing', function () {
     expect(() => {
