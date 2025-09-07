@@ -1,0 +1,22 @@
+{
+  "solution": {
+    "semver-deprecate": {
+      "impact": "major",
+      "oldVersion": "0.0.0",
+      "newVersion": "1.0.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2025-09-07)\n\n* semver-deprecate 1.0.0 (major)\n\n#### :boom: Breaking Change\n* `semver-deprecate`\n  * [#1](https://github.com/ember-cli/semver-deprecate/pull/1) Initial working version ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `semver-deprecate`\n  * [#2](https://github.com/ember-cli/semver-deprecate/pull/2) start using release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+}
