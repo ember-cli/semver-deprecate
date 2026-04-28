@@ -146,7 +146,7 @@ function warn(message) {
   console.warn(chalk.yellow(message));
 }
 
-function isDeprecationRemoved(until, currentVersion) {
+export function isDeprecationRemoved(until, currentVersion) {
   return semver.gte(
     semver.coerce(currentVersion, { includePrerelease: false }),
     until,
