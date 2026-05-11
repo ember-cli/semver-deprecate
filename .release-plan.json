@@ -1,14 +1,14 @@
 {
   "solution": {
     "semver-deprecate": {
-      "impact": "major",
-      "oldVersion": "0.0.0",
-      "newVersion": "1.0.0",
+      "impact": "minor",
+      "oldVersion": "1.0.0",
+      "newVersion": "1.1.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         },
         {
           "impact": "patch",
@@ -18,5 +18,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-09-07)\n\n* semver-deprecate 1.0.0 (major)\n\n#### :boom: Breaking Change\n* `semver-deprecate`\n  * [#1](https://github.com/ember-cli/semver-deprecate/pull/1) Initial working version ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `semver-deprecate`\n  * [#2](https://github.com/ember-cli/semver-deprecate/pull/2) start using release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-05-11)\n\n* semver-deprecate 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `semver-deprecate`\n  * [#4](https://github.com/ember-cli/semver-deprecate/pull/4) expose isDeprecationRemoved function ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `semver-deprecate`\n  * [#6](https://github.com/ember-cli/semver-deprecate/pull/6) upate release plan to enable OIDC ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
